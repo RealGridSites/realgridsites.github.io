@@ -2,18 +2,19 @@
 
 # _site폴더가 생성되었다고 가정하고 실행
 
-cd _site
+cd ./_site
+
+echo "--------- check status"
 git status
 git remote -v
 
-if test $(git diff --cached --name-only --diff-filter=A -z HEAD  |
-	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
-then
-    echo "변경된 사이트 정보를 배포합니다."
+echo "--------- add"
+git add -A
 
-    now=$(date +'%Y-%m-%d %T')
-    message="Update message $now"
-    echo $message
-else
-    echo "변경된 내용이 없습니다."
-fi
+echo "--------- commit"
+now=$(date +'%Y-%m-%d %T')
+message="Update message $now"
+git commit -m "$message"
+
+echo "--------- push"
+git push deploy master
