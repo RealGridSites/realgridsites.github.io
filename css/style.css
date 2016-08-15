@@ -537,6 +537,12 @@ iframe {
 
 /*======= Features =======*/
 
+.features img {
+    max-width: 220px;
+    margin: 0px auto;
+    background-color: #fafafa;
+}
+
 .service-item {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -683,7 +689,7 @@ iframe {
 /*======= Team ======*/
 
 .team img {
-  max-width: 240px;
+  max-width: 300px;
   margin: 0px auto;
   background-color: #fafafa;
 }
