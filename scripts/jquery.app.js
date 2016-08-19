@@ -55,7 +55,7 @@ $(window).scroll(function(){
     } else {
         $('.back-to-top').fadeOut();
     }
-}); 
+});
 
 $('.back-to-top').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 1000);
@@ -66,7 +66,7 @@ $('.back-to-top').click(function(){
 Contact App
 =============================================== */
 
-//var $ = jQuery.noConflict(); //Relinquish jQuery's control of the $ variable. 
+//var $ = jQuery.noConflict(); //Relinquish jQuery's control of the $ variable.
 
 /*global jQuery */
 jQuery(function ($) {
@@ -99,10 +99,10 @@ jQuery(function ($) {
                 this.$errorName.show(500);
                 this.$errorName.delay(4000);
                 this.$errorName.animate({
-                    height: 'toggle'  
+                    height: 'toggle'
                 }, 500, function() {
                     // Animation complete.
-                }); 
+                });
                 error = true; // change the error state to true
             }
 
@@ -117,23 +117,23 @@ jQuery(function ($) {
                 this.$errorEmail.show(500);
                 this.$errorEmail.delay(4000);
                 this.$errorEmail.animate({
-                    height: 'toggle'  
+                    height: 'toggle'
                 }, 500, function() {
                     // Animation complete.
-                });         
+                });
                 error = true;
             }
 
             var message = this.$contactFormMessage.val(); // get the value of the input field
-            
-            if(message == "" || message == " " || message == "Message") {              
+
+            if(message == "" || message == " " || message == "Message") {
                 this.$errorMessage.show(500);
                 this.$errorMessage.delay(4000);
                 this.$errorMessage.animate({
-                    height: 'toggle'  
+                    height: 'toggle'
                 }, 500, function() {
                     // Animation complete.
-                });            
+                });
                 error = true; // change the error state to true
             }
 
@@ -141,10 +141,10 @@ jQuery(function ($) {
                 this.$errorForm.show(500);
                 this.$errorForm.delay(4000);
                 this.$errorForm.animate({
-                    height: 'toggle'  
+                    height: 'toggle'
                 }, 500, function() {
                     // Animation complete.
-                }); 
+                });
             }
 
             return error;
@@ -178,10 +178,10 @@ jQuery(function ($) {
                         $this.$confirmMessage.show(500);
                         $this.$confirmMessage.delay(4000);
                         $this.$confirmMessage.animate({
-                            height: 'toggle'  
+                            height: 'toggle'
                             }, 500, function() {
-                        });    
-                        
+                        });
+
                         $this.$contactFormName.val('');
                         $this.$contactFormEmail.val('');
                         $this.$contactFormMessage.val('');
@@ -202,7 +202,7 @@ jQuery(function ($) {
         }
     };
 
-    
+
 
     //Initializing the app
     ContactFormApp.init({});

@@ -76,7 +76,7 @@
           var stickyElement = $(this);
 
           var stickyId = stickyElement.attr('id');
-          var wrapperId = stickyId ? stickyId + '-' + defaults.wrapperClassName : defaults.wrapperClassName 
+          var wrapperId = stickyId ? stickyId + '-' + defaults.wrapperClassName : defaults.wrapperClassName
           var wrapper = $('<div></div>')
             .attr('id', stickyId + '-sticky-wrapper')
             .addClass(o.wrapperClassName);
@@ -109,7 +109,7 @@
           var unstickyElement = $(this);
 
           var removeIdx = -1;
-          for (var i = 0; i < sticked.length; i++) 
+          for (var i = 0; i < sticked.length; i++)
           {
             if (sticked[i].stickyElement.get(0) == unstickyElement.get(0))
             {
