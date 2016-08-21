@@ -81,16 +81,8 @@
             <a href="#license">제품구매</a>
           </li>
           <li class="dropdown">
-          <a href="#" data-toggle="dropdown">
-            회사
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu arrow">
-            <li><a href="contact.html">연락처</a></li>
-            <li><a href="#news">뉴스</a></li>
-            <li><a href="http://blog.naver.com/realgrid" target="_blank">블로그</a></li>
-          </ul>
-        </li>
+              <a href="#contact">회사</a>
+          </li>
         </ul>
 
         <!-- Navbar right -->
@@ -105,7 +97,7 @@
             <a href="http://demo.realgrid.com/Manager/Questions" target="_blank">질문답변</a>
           </li>
           <li>
-            <a href="http://demo.realgrid.com/Manager/Questions" target="_blank"
+            <a href="" target="_blank"
                 class="btn btn-inverse btn-bordered navbar-btn">평가판</a>
           </li>
         </ul>
@@ -982,102 +974,144 @@
 
 <!-- SUPPORT -->
 <section class="section contact-page bg-gray" id="support">
-  <div class="container">
+    <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <div class="title-box">
-            <p class="title-alt">Support 01.</p>
-            <h3 class="fadeIn animated wow" data-wow-delay=".1s">개발자를 위한 기초교육(무료)</h3>
-            <div class="border"></div>
-          </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">Support 01.</p>
+                    <h3 class="fadeIn animated wow" data-wow-delay=".1s">개발자를 위한 기초교육(무료)</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
         </div>
-      </div> <!-- end row -->
+        <!-- end row -->
 
-    <div class="row text-center">
+        <div class="row text-center">
 
-      <div class="col-sm-4">
-        <div class="contact-detail-box">
-          <i class="zmdi zmdi-layers zmdi-hc-3x text-colored"></i>
-          <h4>교 육 내 용</h4>
-          RealGridJs 기초 개발 과정으로<br />
-          설치방법, 구성요소 및 컨셉트, 기본기능 구현 방법,<br />
-          데이터 입/출력
+            <div class="col-sm-4">
+                <div class="contact-detail-box">
+                    <i class="zmdi zmdi-layers zmdi-hc-3x text-colored"></i>
+                    <h4>교 육 내 용</h4> RealGridJs 기초 개발 과정으로
+                    <br /> 설치방법, 구성요소 및 컨셉트, 기본기능 구현 방법,
+                    <br /> 데이터 입/출력
+                </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-sm-4">
+                <div class="contact-detail-box">
+                    <i class="zmdi zmdi-pin zmdi-hc-3x"></i>
+                    <h4>교 육 장 소</h4>
+
+                    <address>
+                        경기도 성남시 분당구 운중로 135<br>
+                        더원스퀘어 603호<br>
+                    </address>
+                </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-sm-4">
+                <div class="contact-detail-box">
+                    <i class="zmdi zmdi-headset-mic zmdi-hc-3x text-colored"></i>
+                    <h4>연 락 처</h4> E: <a href="mailto:onlydel@realgrid.com" class="text-muted">onlydel@realgrid.com</a>
+                    <h4 class="text-muted">O1O 4749 O188</h4>
+                </div>
+            </div>
+            <!-- end col -->
+
         </div>
-      </div><!-- end col -->
+        <!-- end row -->
 
-      <div class="col-sm-4">
-        <div class="contact-detail-box">
-          <i class="zmdi zmdi-pin zmdi-hc-3x"></i>
-          <h4>교 육 장 소</h4>
 
-          <address>
-          경기도 성남시 분당구 운중로 135<br>
-          더원스퀘어 603호<br>
-        </address>
+        <div class="row">
+            <form role="form" name="ajax-form" id="ajax-form" action="https://formsubmit.io/send/coderthemes@gmail.com" method="post" class="form-main">
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="name2">Name</label>
+                        <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+                        <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                    </div>
+                    <!-- /Form-name -->
+
+                    <div class="form-group">
+                        <label for="email2">Email</label>
+                        <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                        <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+                    </div>
+                    <!-- /Form-email -->
+
+                    <div class="form-group">
+                        <label for="message2">Message</label>
+                        <textarea class="form-control" id="message2" name="message" rows="5" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+
+                        <div class="error" id="err-message" style="display: none;">Please enter message</div>
+                    </div>
+                    <!-- /col -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="ajaxsuccess" class="text-success">E-mail was successfully sent.</div>
+                            <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+                            <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                            <div class="error" id="err-state"></div>
+                        </div>
+                        <!-- /col -->
+                    </div>
+                    <!-- /row -->
+
+                </div>
+                <!-- end col -->
+
+                <!-- Contact form -->
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="name2">Name</label>
+                        <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+                        <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                    </div>
+                    <!-- /Form-name -->
+
+                    <div class="form-group">
+                        <label for="email2">Email</label>
+                        <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                        <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+                    </div>
+                    <!-- /Form-email -->
+
+                    <div class="form-group">
+                        <label for="message2">Message</label>
+                        <textarea class="form-control" id="message2" name="message" rows="5" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+
+                        <div class="error" id="err-message" style="display: none;">Please enter message</div>
+                    </div>
+                    <!-- /col -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="ajaxsuccess" class="text-success">E-mail was successfully sent.</div>
+                            <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+                            <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                            <div class="error" id="err-state"></div>
+                            <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">교육신청</button>
+                        </div>
+                        <!-- /col -->
+                    </div>
+                    <!-- /row -->
+
+                </div>
+                <!-- end col -->
+
+            </form>
+            <!-- /form -->
         </div>
-      </div><!-- end col -->
-
-      <div class="col-sm-4">
-        <div class="contact-detail-box">
-          <i class="zmdi zmdi-headset-mic zmdi-hc-3x text-colored"></i>
-          <h4>연 락 처</h4>
-
-          E: <a href="mailto:onlydel@realgrid.com" class="text-muted">onlydel@realgrid.com</a>
-          <h4 class="text-muted">O1O 4749 O188</h4>
-        </div>
-      </div><!-- end col -->
+        <!-- end row -->
 
     </div>
-    <!-- end row -->
-
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="contact-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.91256482724!2d127.07595031546445!3d37.39189997983106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b588b505cabbb%3A0x5379a198fa73ca1!2zKOyjvCnsmrDrpqzthYztgazsnbjthLDrgrTshZTrgqA!5e0!3m2!1sko!2skr!4v1471314314065" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
-        </div>
-      </div><!-- end col -->
-
-      <!-- Contact form -->
-      <div class="col-sm-6">
-        <form role="form" name="ajax-form" id="ajax-form" action="https://formsubmit.io/send/coderthemes@gmail.com" method="post" class="form-main">
-
-          <div class="form-group">
-            <label for="name2">Name</label>
-            <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
-            <div class="error" id="err-name" style="display: none;">Please enter name</div>
-          </div> <!-- /Form-name -->
-
-          <div class="form-group">
-            <label for="email2">Email</label>
-            <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
-            <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
-          </div> <!-- /Form-email -->
-
-          <div class="form-group">
-            <label for="message2">Message</label>
-            <textarea class="form-control" id="message2" name="message" rows="5" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
-
-            <div class="error" id="err-message" style="display: none;">Please enter message</div>
-          </div> <!-- /col -->
-
-          <div class="row">
-            <div class="col-xs-12">
-              <div id="ajaxsuccess" class="text-success">E-mail was successfully sent.</div>
-              <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
-              <div class="error" id="err-timedout">The connection to the server timed out!</div>
-              <div class="error" id="err-state"></div>
-              <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">교육신청</button>
-            </div> <!-- /col -->
-          </div> <!-- /row -->
-
-        </form> <!-- /form -->
-      </div> <!-- end col -->
-
-    </div> <!-- end row -->
-
-  </div> <!-- end Container -->
+    <!-- end Container -->
 </section>
 
 
@@ -1132,9 +1166,9 @@
 
           </ul>
 
-          <a href="" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">데모소스보기</a>
-          <a href="" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".5s">개발자문서</a>
-          <a href="" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".6s">질문답변</a>
+          <a href="http://demo.realgrid.com" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">데모소스보기</a>
+          <a href="http://help.realgrid.com" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".5s">개발자문서</a>
+          <a href="http://demo.realgrid.com/Manager/Questions" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".6s">질문답변</a>
         </div>
       </div>
 
@@ -1791,7 +1825,7 @@
       <div class="col-sm-12 text-center">
         <div class="title-box">
           <p class="title-alt">LICENSE</p>
-          <h3 class="fadeIn animated wow" data-wow-delay=".1s">라이선스</h3>
+          <h3 class="fadeIn animated wow" data-wow-delay=".1s">제 품 구 매</h3>
           <div class="border"></div>
         </div>
       </div>
@@ -1825,7 +1859,7 @@
                             <li>구매문의</li>
                             <li>영업대표: 윤 대 섭 이사</li>
                             <li>휴대폰: 010-6324-4761</li>
-                            <li>이메일: dsyoon@realgrid.com</li>
+                            <li>이메일: <a href="mailto:support@realgrid.com" class="text-muted">support@realgrid.com</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -1885,6 +1919,108 @@
 <!-- END PRICING -->
 
 
+<!-- CONTACT -->
+<section class="section contact-page" id="contact">
+  <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div class="title-box">
+            <p class="title-alt">COMPANY</p>
+            <h3 class="fadeIn animated wow" data-wow-delay=".1s">(주) 우리테크인터내셔날 </h3>
+            <div class="border"></div>
+          </div>
+        </div>
+      </div> <!-- end row -->
+
+    <div class="row text-center">
+
+      <div class="col-sm-4">
+        <div class="contact-detail-box">
+          <i class="zmdi zmdi-layers zmdi-hc-3x text-colored"></i>
+          <h4>영 업 문 의</h4>
+
+          <h4 class="text-muted"><abbr title="Phone">P:</abbr> 010-6324-4761<br></h4>
+          E: <a href="mailto:dsyoon@realgrid.com" class="text-muted">dsyoon@realgrid.com</a>
+        </div>
+      </div><!-- end col -->
+
+      <div class="col-sm-4">
+        <div class="contact-detail-box">
+          <i class="zmdi zmdi-headset-mic zmdi-hc-3x text-colored"></i>
+          <h4>기 술 지 원 문 의</h4>
+
+          <abbr title="Phone">P:</abbr> 0505-325-8080 (내선 9102)<br>
+          E: <a href="mailto:support@realgrid.com" class="text-muted">support@realgrid.com</a>
+        </div>
+      </div><!-- end col -->
+
+      <div class="col-sm-4">
+        <div class="contact-detail-box">
+            <i class="zmdi zmdi-pin zmdi-hc-3x"></i>
+          <h4>찾 아 오 시 는 길</h4>
+
+            <address>
+                경기도 성남시 분당구 운중로 135<br>
+                더원스퀘어 603호<br>
+            </address>
+        </div>
+      </div><!-- end col -->
+
+    </div>
+    <!-- end row -->
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.91256482724!2d127.07595031546445!3d37.39189997983106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b588b505cabbb%3A0x5379a198fa73ca1!2zKOyjvCnsmrDrpqzthYztgazsnbjthLDrgrTshZTrgqA!5e0!3m2!1sko!2skr!4v1471314314065" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
+        </div>
+      </div><!-- end col -->
+
+      <!-- Contact form -->
+      <div class="col-sm-6">
+        <form role="form" name="ajax-form" id="ajax-form" action="https://formsubmit.io/send/coderthemes@gmail.com" method="post" class="form-main">
+
+          <div class="form-group">
+            <label for="name2">Name</label>
+            <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+            <div class="error" id="err-name" style="display: none;">Please enter name</div>
+          </div> <!-- /Form-name -->
+
+          <div class="form-group">
+            <label for="email2">Email</label>
+            <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+            <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+          </div> <!-- /Form-email -->
+
+          <div class="form-group">
+            <label for="message2">Message</label>
+            <textarea class="form-control" id="message2" name="message" rows="5" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+
+            <div class="error" id="err-message" style="display: none;">Please enter message</div>
+          </div> <!-- /col -->
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div id="ajaxsuccess" class="text-success">E-mail was successfully sent.</div>
+              <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+              <div class="error" id="err-timedout">The connection to the server timed out!</div>
+              <div class="error" id="err-state"></div>
+              <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Submit</button>
+            </div> <!-- /col -->
+          </div> <!-- /row -->
+
+        </form> <!-- /form -->
+      </div> <!-- end col -->
+
+    </div> <!-- end row -->
+
+  </div> <!-- end Container -->
+</section>
+
+<!-- END CONTACT -->
+
 
 <!-- FAQ -->
 <section class="section" id="news">
@@ -1893,63 +2029,167 @@
     <div class="row">
       <div class="col-sm-12 text-center">
         <div class="title-box">
-          <p class="title-alt">Faq</p>
-          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Simple Questions</h3>
+          <h3 class="fadeIn animated wow" data-wow-delay=".1s"> RealGrid News </h3>
           <div class="border"></div>
         </div>
       </div>
     </div> <!-- end row -->
 
     <div class="row m-t-30">
-      <div class="col-md-5 col-md-offset-1">
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInLeft wow" data-wow-delay=".1s">
-          <h4 class="question" data-wow-delay=".1s">What is Lorem Ipsum?</h4>
-          <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
+          
+          <div class="col-md-5 col-md-offset-1">
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[전자신문] 우리테크인터내셔날, 아이티메이트와 포괄적인 상호협력 협약</h4>
+                <p class="answer">
+                    데이터 그리드 전문업체인 우리테크인터내셔날(대표 나현호·오른쪽)과 재정정보시스템 및 ERP 솔루션 전문업체인 아이티메이트(대표 고재용)가 상호 주력제품 판매를 위해 상호 협력하기로 했다. 양사는 이를 위해 지난 11일 상호협력 협약을 맺고 우리테크의 웹데이타그리드 ‘리얼그리드(RealGrid) JS’와 아이티메이트의 공공기관 ERP 솔루션 판매에 협력키로 했다. ERP에 리얼그리드를 탑재해 판매하거나 우리테크의 영업·제품개발·기술지원 체계 등 노하우를 아이티메이트와 공동으로 활용하는... <br />
+                    <span class="tags"><a href="http://www.etnews.com/20150512000180" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[미디어잇] 우리테크, 신제품 ‘리얼그리드JS' 출시…"HTML5와 빅데이터 모두 잡는다"</h4>
+                <p class="answer">
+                    [미디어잇 박상훈] 우리테크인터내셔날(대표 나현호)이 HTML5 표준을 적용한 그리드 컴포넌트 제품인 ‘리얼그리드 제이에스(RealGrid JS)’를 출시했다고 19일 밝혔다. ‘리얼그리드 제이에스'는 웹 화면에서 엑셀과 같은 형태로 데이터를 표현해주는 그리드 제품으로, 최신 웹 표준인 HTML5 캔버스 기능을 이용해 웹 화면에서 사용자가 직접 데이터를 편집하거나 보이는 형태를 조작할 수 있다. 이미 상당한 사용자층을 갖고 있는 '리얼그리드+(RealGrid+)'의 HTML5 버전으로, 특히 데이터는 원본 그대로 메모리에 적재하고 화면에 보이는 부분만 렌더링해 보여주는 방식으로 처리 속도를 크게 높였다고 업체 측은 설명했다.<br /><br />또한, 이 제품은 다양한 API(Application Programming Interface)를 지원해 개발시간을 단축할 수 있고, 그리드의 디자인과 데이터 영역이 분리돼 있어 디자이너와 업무개발자의 업무효율과 집중도를 높일 수 있도록 개발됐다. 리얼그리드 제품 시리즈는 삼성SDS의 물류 솔루션 ‘첼로(Cello)’, 삼성전자의 고객관리시스템 등 다양한 기업과 공공기관이 사용하고 있고, ...<br />
+                    <span class="tags"><a href="http://www.it.co.kr/news/article.html?no=2796464" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[미디어잇] 나현호 우리테크 대표 "기업용 시스템도 탈 액티브X 시급"</h4>
+                <p class="answer">
+                    [미디어잇 박상훈] 보안과 사용 편의성 측면에서 액티브X는 이미 '공공의 적'이다. 액티브X는 마이크로소프트의 소프트웨어(SW) 개발 기술 중 하나로 1996년 세상에 나온 이후 특히 국내에서 큰 인기를 끌어 널리 사용됐다. 그러나 인터넷 익스플로러라는 특정 브라우저에서만 사용할 수 있고, 무엇보다 보안이 허술해 각종 사건 사고의 원흉으로 지목됐다.<br /> 이 때문에 지난 2010년 네이버가 ‘액티브X 퇴출’을 선언한 데 이어 같은 해 우리은행이 액티브X 없는 온라인 뱅킹을 선보였다. 방통위, 행안부, 국회 등을 중심으로 공공부문에서 액티브X를 걷어내자는 움직임이 활발하고, 최근에는 액티브X의 '마지막 보루'로 여겨지던 공인인증서에서 액티브X 방식을 제외하자는 논의가 활발하다. 액티브X의 시대가 사실상 저물고 있다. ...<br />
+                    <span class="tags"><a href="http://www.it.co.kr/news/article.html?no=2749214&sec_no=181" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[미디어잇] 토종 웹 UI 솔루션, 이제는 HTML5가 대세</h4>
+                <p class="answer">
+                    [미디어잇 박상훈] 토종 웹 사용자인터페이스(UI) 업체들이 잇달아 HTML5에 대한 지원을 강화하고 있다. 그리드 솔루션 분야가 가장 활발한데 실제 데이터를 직접 주고받지 않고도 필요한 정보를 분석, 가공할 수 있어 최근의 개인정보 추세에 효과적으로 대응할 수 있다. 일부는 해외 진출도 추진하고 있지만, 기반이 될 안정적인 성장 구조를 갖추기 위해서는 유지보수료 현실화 등 국내 시장 관행이 개선돼야 한다는 지적이다. <br />...<br /> UI 컴포넌트 전문업체인 우리테크인터내셔날(대표 나현호)은 HTML5 웹 그리드 컴포넌트 신제품 '리얼그리드JS(RealGridJS)’ 개발을 완료하고 이르면 내달부터 판매를 시작한다. 이미 상당한 사용자를 확보한 그리드 컴포넌트인 '리얼그리드+(RealGrid+)'의 HTML5 버전으로, 데이터는 원본 그대로 메모리에 적재하고 화면에 보이는 부분만 렌더링해 보여주는 방식으로 처리 속도를 높였다고 업체 측은 설명했다. ...<br />
+                    <span class="tags"><a href="http://www.it.co.kr/news/article.html?no=2771023&sec_no=181" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+          </div>
 
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInLeft wow" data-wow-delay=".3s">
-          <h4 class="question">Why use Lorem Ipsum?</h4>
-          <p class="answer">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
-        </div>
+          
+          <div class="col-md-5">
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInRight wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[미디어잇] 우리테크 '리얼그리드 제이에스', GS 인증 획득</h4>
+                <p class="answer">
+                    사용자 인터페이스(UI) 컴포넌트 전문업체인 우리테크인터내셔날(대표 나현호)은 한국정보통신기술협회(TTA)으로부터 HTML5 웹 그리드 컴포넌트 신제품인 ‘리얼그리드 제이에스(RealGrid JS)’에 대한 GS(Good Software) 인증을 획득했다고 28일 밝혔다. GS 인증은 소프트웨어(SW)의 기능성과 신뢰성, 호환성 등을 평가해 일정 수준 이상인 제품에 부여하는 국가인증이다. ...<br />
+                    <span class="tags"><a href="http://www.it.co.kr/news/article.html?no=2796464" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInRight wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[전자신문] 우리테크, `리얼그리드JS` 전자정부 표준프레임워크 호환성 인증 획득</h4>
+                <p class="answer">
+                    사용자인터페이스(UI) 컴포넌트 전문업체인 우리테크인터내셔날(대표 나현호)은 최근 한국정보화진흥원(NIA)으로부터 HTML5 웹 그리드 컴포넌트 신제품 ‘리얼그리드 JS’에 대한 전자정부 표준 프레임워크 3.1 호환성 인증을 획득했다고 17일 밝혔다.전자정부 표준 프레임워크는 공공부문 정보화 사업에 적용하는 플랫폼 별로 표준화한 개발 프레임워크로 지난 2009년 6월 공개 이후 공공사업에 적용되고 있다. 이로써 우리테크인터내셔날은 전자정부 표준 프레임워크를 사용하는 공공 프로젝트에 참여, ‘리얼그리드JS’를 공급할 수 있는 기회를 확대할 수 있게 됐다. 이 회사가 지난 10월 말 개발한 ‘리얼그리드 JS’는...<br />
+                    <span class="tags"><a href="http://www.etnews.com/20141217000145?koost=worstnews" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInRight wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[전자신문] 우리테크, HTML5 기반 웹 그리드 컴포넌트 신제품 개발</h4>
+                <p class="answer">
+                    UI 컴포넌트 전문업체인 우리테크인터내셔날(대표 나현호)은 최근 HTML5 웹 그리드 컴포넌트 신제품 ‘리얼그리드(RealGrid) JS’를 개발, 최근 열린 ’인터넷 이용환경 개선 웹 솔루션 전시회‘에 첫 선을 보였다고 22일 밝혔다. 이 회사가 새로 개발한 ‘리얼그리드 JS’는 기업용 웹 응용프로그램 개발에 필요한 ‘그리드’ 업무화면에 DB 정보를 표 형태로 보여주는 컴포넌트다. 그동안 웹의 한계로 인해 액티브X를 사용하던 것을 HTML5 캔버스 기술을 사용했다. 단순한 표 형태로 보여주기만 했던 그리드에 엑셀처럼 자유로운 사용자인터페이스(UI)를 제공해 대량의 데이터를 불러올 수 있고, 사용자가 원하는 대상으로 합계나 소계를 구할 수 있도록 한 것이 특징이다. ...<br />
+                    <span class="tags"><a href="http://www.etnews.com/20141022000165" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+              
+              
+              
+          
+              
+              
+              
+              <!-- Question/Answer -->
+              <div class="question-q-box"><i class="zmdi zmdi-toys"></i></div>
+              <div class="animated fadeInRight wow" data-wow-delay=".1s">
+                <h4 class="question" data-wow-delay=".1s">[전자신문] [최고를 향해 뛴다]우리테크인터내셔날</h4>
+                <p class="answer">
+                    우리테크인터내셔날(대표 나현호)은 1998년 2월 설립한 초기 벤처기업이다. ‘우리테크’라는 개인기업으로 출발해 지난 2010년 5월에 법인으로 전환했다.<br /><br /> 설립 초기에는 델파이용 개발자 그리드 컴포넌트인 ‘리얼 그리드’를 개발해 보급하는데 주력했다. 업무용 화면에서 엑셀과 같은 기능이 필요할 때 사용하는 윈도 전용 UI컴포넌트 초기 버전이다. 엑셀 데이터를 불러와 사용하거나 작업한 데이터를 엑셀로 내보내는 기능도 갖췄다. 이 제품은 지금도 1000여명의 개발자가 이용할 정도로 인기를 끌었다.<br /> UI 컴포넌트 및 실험실정보관리시스템(LIMS) 전문기업인 우리테크인터내셔날 직원들이 글로벌 기업으로 도약을 다짐하며 파이팅하고 있다.<br /><br /> 1999년부터 내놓은 전사자원관리(ERP) 제품은 리얼 그리드를 활용해 추가로 개발한 프로그램이다. 우리테크는 이후 수질검사 솔루션, 닷넷 디컴파일러, 수질검사 솔루션을 업그레이드 한 아이랩 림스 솔루션 등을 개발해 왔다. ...<br />
+                    <span class="tags"><a href="http://www.etnews.com/20140806000186" target="_blank">기사원문보기</a></span>
+                  </p>
+              </div>
+              
+          
+          </div>
 
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInLeft wow" data-wow-delay=".5s">
-          <h4 class="question">How many variations exist?</h4>
-          <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
-
-      </div>
-      <!--/col-md-5 -->
-
-      <div class="col-md-5">
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInRight wow" data-wow-delay=".2s">
-          <h4 class="question">Is safe use Lorem Ipsum?</h4>
-          <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
-
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInRight wow" data-wow-delay=".4s">
-          <h4 class="question">When can be used?</h4>
-          <p class="answer">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
-        </div>
-
-        <!-- Question/Answer -->
-        <div class="question-q-box">Q.</div>
-        <div class="animated fadeInRight wow" data-wow-delay=".6s">
-          <h4 class="question">License &amp; Copyright</h4>
-          <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
-
-      </div>
-      <!--/col-md-5-->
     </div>
 
   </div>
