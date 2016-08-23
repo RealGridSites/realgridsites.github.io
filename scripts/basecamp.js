@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var basecampUrl = "http://basecamp.wrw.kr";
+    var basecampUrl = "https://basecamp.wrw.kr";
     var wapiUrl = basecampUrl + "/api";
 
     $.support.cors = true; //ajax - cross domain support
