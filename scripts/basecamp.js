@@ -3,6 +3,64 @@ $(document).ready(function () {
     var wapiUrl = basecampUrl + "/api";
 
     $.support.cors = true; //ajax - cross domain support
+    $("#enrollmentForm").validate({
+            rules: {
+                company: {
+                    required: true
+                },
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                },
+                studentPasswordConfirm: {
+                    required: true,
+                    equalTo: "#studentPassword"
+                },
+                phone: {
+                    required: true,
+                    //number: true
+                },
+                courseList: {
+                    required: true
+                }
+            },
+            messages: {
+                company: {
+                    /*required: function (element) {
+                        alert("이름은 필수 입력 사항 입니다.");
+                    }*/
+                    required: "회사명을 입력하세요."
+                },
+                name: {
+                    required: "이름은 반드시 입력해야 합니다."
+                },
+                email: {
+                    required: "이메일을 입력하세요.",
+                    email: "이메일 형식이 잘못되었습니다. 예) id@domain.com"
+                },
+                password: {
+                    required: ""
+                },
+                studentPasswordConfirm: {
+                    required: "",
+                    equalTo: ""
+                },
+                phone: {
+                    required: "전화번호는 반드시 입력해야 합니다. 예) 010-1111-2222"
+                },
+                courseList: {
+                    required: "교육과정을 선택하세요."
+                }
+            },
+            errorClass: "error",
+            errorElement: "div"
+        });
 
     getActiveCourses();
 
@@ -30,7 +88,11 @@ $(document).ready(function () {
         });
     }
 
+    // 수강신청 등록하기
     function createEnrollment() {
+
+        if (!$("#enrollmentForm").valid()) return;
+
         $.ajax({
             type: "post",
             crossDomain: true,

@@ -867,10 +867,9 @@ iframe {
   border-color: #97a0af;
 }
 
-
-.error {
+.error{
   margin: 8px 0px;
-  display: none;
+  /*display: none;*/
   color: red;
 }
 #ajaxsuccess {
@@ -1194,4 +1193,8 @@ iframe {
   .intro-form,.video-bar {
     margin-top: 50px;
   }
+}
+
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
 }

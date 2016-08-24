@@ -152,7 +152,7 @@
 <!-- END HOME -->
 
 
-<!-- PRODUCTS -->
+<!-- 제품소개 -->
 <section class="section">
   <div class="container">
 
@@ -313,7 +313,7 @@
   </div> <!-- end container -->
 </section>
 
-<!-- END PRODUCTS -->
+<!-- END 제품소개 -->
 
 
 <!-- FEATURES -->
@@ -945,118 +945,122 @@
         </div>
         <!-- end row -->
 
+        <form id="enrollmentForm" role="form" method="post">
+            <div class="row">
+                <div class="col-sm-6">
 
-        <div class="row">
-            <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="company">회사명</label>
+                        <input class="form-control"
+                            id="company"
+                            name="company"
+                            placeholder="회사명"
+                            required
+                            type="text">
+                    </div>
+                    <!-- /Form-name -->
 
-                <div class="form-group">
-                    <label for="company">회사명</label>
-                    <input class="form-control"
-                        id="company"
-                        name="company"
-                        placeholder="회사명"
-                        type="text">
-                    <div class="error"
-                        id="err-company"
-                        style="display: none;">회사명을 입력하세요.</div>
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input class="form-control"
+                            id="name"
+                            name="name"
+                            type="text"
+                            required
+                            placeholder="이름">
+                        <div class="error"
+                            id="err-name"
+                            style="display: none;">이름을 입력하세요.</div>
+                    </div>
+                    <!-- /Form-name -->
+
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input class="form-control"
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder="이메일">
+                        <div class="error"
+                            id="err-emailvld"
+                            style="display: none;">이메일 형식이 잘못되었습니다.</div>
+                    </div>
+                    <!-- /Form-email -->
+
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input class="form-control"
+                            id="phone"
+                            name="phone"
+                            type="text"
+                            required
+                            placeholder="전화번호">
+                        <div class="error"
+                            id="err-name"
+                            style="display: none;">전화번호를 입력하세요.</div>
+                    </div>
+                    <!-- /Form-phone -->
+
                 </div>
-                <!-- /Form-name -->
+                <!-- end col -->
 
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input class="form-control"
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="이름">
-                    <div class="error"
-                        id="err-name"
-                        style="display: none;">이름을 입력하세요.</div>
-                </div>
-                <!-- /Form-name -->
+                <!-- Contact form -->
+                <div class="col-sm-6">
 
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input class="form-control"
-                        id="email"
-                        name="email"
-                        type="text"
-                        placeholder="이메일">
-                    <div class="error"
-                        id="err-emailvld"
-                        style="display: none;">이메일 형식이 잘못되었습니다.</div>
-                </div>
-                <!-- /Form-email -->
+                    <div class="form-group">
+                        <label for="courseList">교육과정</label>
+                        <select class="form-control"
+                            name="courseList"
+                            required
+                            id="courseList">
+                            <option value="">교육과정을 선택해 주십시오.</option>
+                            <option>option 1</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                        </select>
+                        <div class="error"
+                            id="err-name"
+                            style="display: none;"></div>
+                    </div>
+                    <!-- /Form-name -->
 
-                <div class="form-group">
-                    <label for="phone">연락처</label>
-                    <input class="form-control"
-                        id="phone"
-                        name="phone"
-                        type="text"
-                        placeholder="전화번호">
-                    <div class="error"
-                        id="err-name"
-                        style="display: none;">전화번호를 입력하세요.</div>
-                </div>
-                <!-- /Form-phone -->
+                    <div class="form-group">
+                        <label>교육장소</label>
+                        <input class="form-control"
+                            type="text"
+                            required
+                            readonly
+                            value="경기도 성남시 분당구 운중로 135 더원스퀘어 603호 (주)우리테크">
+                    </div>
+                    <!-- /Form-email -->
 
-            </div>
-            <!-- end col -->
-
-            <!-- Contact form -->
-            <div class="col-sm-6">
-
-                <div class="form-group">
-                    <label for="courseList">교육과정</label>
-                    <select class="form-control"
-                        name="courseList"
-                        id="courseList">
-                        <option value="">교육과정을 선택해 주십시오.</option>
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                    </select>
-                    <div class="error"
-                        id="err-name"
-                        style="display: none;"></div>
-                </div>
-                <!-- /Form-name -->
-
-                <div class="form-group">
-                    <label>교육장소</label>
-                    <input class="form-control"
-                        type="text"
-                        placeholder=""
-                        readonly
-                        value="경기도 성남시 분당구 운중로 135 더원스퀘어 603호 (주)우리테크">
-                </div>
-                <!-- /Form-email -->
-
-                <div class="form-group">
-                    <label for="message2">교육내용</label>
-                    <ol>
-                        <li>설치방법 및 컨셉트: 아이템(Item)과 데이터로우(DataRow)의 이해</li>
-                        <li>기본기능: 그룹핑, 필터링, 소팅등</li>
-                        <li>데이터편집: 데이터타입, 편집기, 이벤트</li>
-                    </ol>
-                </div>
-                <!-- /col -->
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button class="btn btn-primary btn-shadow btn-rounded w-md"
-                            id="send">교육신청</button>
+                    <div class="form-group">
+                        <label for="message2">교육내용</label>
+                        <ol>
+                            <li>설치방법 및 컨셉트: 아이템(Item)과 데이터로우(DataRow)의 이해</li>
+                            <li>기본기능: 그룹핑, 필터링, 소팅등</li>
+                            <li>데이터편집: 데이터타입, 편집기, 이벤트</li>
+                        </ol>
                     </div>
                     <!-- /col -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-primary btn-shadow btn-rounded w-md"
+                                id="send">교육신청</button>
+                        </div>
+                        <!-- /col -->
+                    </div>
+                    <!-- /row -->
+
                 </div>
-                <!-- /row -->
+                <!-- end col -->
 
             </div>
-            <!-- end col -->
-
-        </div>
-        <!-- end row -->
+            <!-- end row -->
+        </form>
+        <!-- end form -->
 
     </div>
     <!-- end Container -->
@@ -1129,63 +1133,60 @@
 </section>
 
 
-<section class="section bg-gray" id="support03">
-  <div class="container">
+<section class="section bg-gray"
+    id="support03">
+    <div class="container">
 
-    <div class="row">
-        <div class="col-sm-5">
-          <img src="images/support03.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="images/support03.png"
+                    class="img-responsive fadeIn animated wow"
+                    data-wow-delay=".2s">
+            </div>
+
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-6">
+                <div class="feature-detail">
+
+                    <div class="title-box">
+                        <p class="title-alt">Support 03.</p>
+                        <h3 class="fadeIn animated wow"
+                            data-wow-delay=".1s">프리미엄 기술지원(유료)</h3>
+                        <div class="border"></div>
+                    </div>
+
+                    <ul class="zmdi-hc-ul">
+                        <li class="fadeIn animated wow"
+                            data-wow-delay=".1s">
+                            <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
+                            <span>업무협의를 통해 기술지원 범위 결정.</span>
+                        </li>
+
+                        <li class="fadeIn animated wow"
+                            data-wow-delay=".2s">
+                            <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
+                            <span>40시간동안 전문 담당자 배정.</span>
+                        </li>
+
+                        <li class="fadeIn animated wow"
+                            data-wow-delay=".3s">
+                            <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
+                            <span>5개 내외의 화면 템플릿 개발 지원.</span>
+                        </li>
+
+                        <li class="fadeIn animated wow"
+                            data-wow-delay=".4s">
+                            <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
+                            <span>도입초기, 개발자 투입시점에 방문 교육 및 질의응답 지원.</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
         </div>
-
-        <div class="col-sm-1"></div>
-
-      <div class="col-sm-6">
-        <div class="feature-detail">
-
-          <div class="title-box">
-            <p class="title-alt">Support 03.</p>
-            <h3 class="fadeIn animated wow" data-wow-delay=".1s">프리미엄 기술지원(유료)</h3>
-            <div class="border"></div>
-          </div>
-
-          <ul class="zmdi-hc-ul">
-            <li class="fadeIn animated wow" data-wow-delay=".1s">
-                <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
-                <span>
-                    업무협의를 통해 기술지원 범위 결정.
-                </span>
-            </li>
-
-            <li class="fadeIn animated wow" data-wow-delay=".2s">
-                <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
-                <span>
-                    40시간동안 전문 담당자 배정.
-                </span>
-            </li>
-
-            <li class="fadeIn animated wow" data-wow-delay=".3s">
-                <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
-                <span>
-                    5개 내외의 화면 템플릿 개발 지원.
-                </span>
-            </li>
-
-            <li class="fadeIn animated wow" data-wow-delay=".4s">
-                <i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i>
-                <span>
-                    도입초기, 개발자 투입시점에 방문 교육 및 질의응답 지원.
-                </span>
-            </li>
-
-
-          </ul>
-
-          <a href="" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">상담요청</a>
-        </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
 <!-- END SUPPORT -->
@@ -1193,46 +1194,103 @@
 
 <!-- PARTNERS -->
 <section id="clients">
-  <div class="container section">
+    <div class="container section">
 
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <div class="title-box">
-          <p class="title-alt">PARTNERS</p>
-          <h3 class="fadeIn animated wow" data-wow-delay=".1s">협력사 리스트</h3>
-          <div class="border"></div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-box">
+                    <p class="title-alt">PARTNERS</p>
+                    <h3 class="fadeIn animated wow"
+                        data-wow-delay=".1s">협력사 리스트</h3>
+                    <div class="border"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div> <!-- end row -->
+        <!-- end row -->
 
-    <div class="row text-center">
         
-        <div class="brand-item animated fadeInLeft wow" data-wow-delay=".1s">
-            <a href="http://www.samsung.com/sec/" target="_blank">
-            <img class="img-responsive" src="images/clients/customer_14.png" alt="Samsung Electronics" />
-            </a>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="">
+                     
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.samsung.com/sec/"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner1.png"
+                                alt="Samsung Electronics" />
+                        </a>
+                        <span>범 LG그룹 공급 파트너</span>
+                    </div>
+                         
+                </div>
+            </div>
         </div>
-        
-        <div class="brand-item animated fadeInLeft wow" data-wow-delay=".1s">
-            <a href="http://www.sds.samsung.co.kr/" target="_blank">
-            <img class="img-responsive" src="images/clients/customer_0.png" alt="Samsung SDS" />
-            </a>
+
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="">
+                      
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.emro.co.kr/"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner2.png"
+                                alt="엠로" />
+                        </a>
+                        <span>구매시스템 번들</span>
+                    </div>
+                     
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.itmate.co.kr/"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner3.png"
+                                alt="아이티메이트" />
+                        </a>
+                        <span></span>
+                    </div>
+                     
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.ideait.co.kr/"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner4.png"
+                                alt="아이디어정보기술" />
+                        </a>
+                        <span></span>
+                    </div>
+                     
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.by21c.com/"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner5.png"
+                                alt="부영산전" />
+                        </a>
+                        <span></span>
+                    </div>
+                     
+                    <div class="brand-item animated fadeInLeft wow"
+                        data-wow-delay=".1s">
+                        <a href="http://www.st-ones.com"
+                            target="_blank">
+                            <img class="img-responsive"
+                                src="images/clients/partner6.png"
+                                alt="에스티원즈" />
+                        </a>
+                        <span></span>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        
-        <div class="brand-item animated fadeInLeft wow" data-wow-delay=".1s">
-            <a href="http://www.skplanet.com/" target="_blank">
-            <img class="img-responsive" src="images/clients/customer_19.png" alt="SK Planet" />
-            </a>
-        </div>
-        
-        <div class="brand-item animated fadeInLeft wow" data-wow-delay=".1s">
-            <a href="http://www.skplanet.com/" target="_blank">
-            <img class="img-responsive" src="images/clients/customer_19.png" alt="SK Planet" />
-            </a>
-        </div>
-        
     </div>
-  </div>
 </section>
 
 <!-- END PARTNERS -->
@@ -2537,82 +2595,87 @@
       </div>
     </div> <!-- end row -->
 
-    <div class="row">
-        <table class="table table-striped">
+    <div class="row table-responsive">
+        <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>제품 라이선스</th>
+                    <th>제품</th>
+                    <th>라이선스 종류</th>
                     <th>제품 구성</th>
-                    <th>제품 금액</th>
+                    <th>판매 금액</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>RealGridJs Enterprise</td>
-                    <td>
-                        <ul>
-                            <li>4Core & 1Domain</li>
-                            <li>라이선스 증서 및 제품 DVD</li>
-                            <li>무상 업그레이드 1년</li>
-                            <li>4시간 기본 교육</li>
-                            <li>전화, e-Mail, 게시판 기술지원 1년 - Flash 버전 (RealGrid+) 무상 제공</li>
-                        </ul>
+                    <td rowspan="6" class="vert-align">
+                        <h4>RealGridJs</h4>
                     </td>
+                    <td class="vert-align">기 본</td>
                     <td>
-                        <ul>
-                            <li>구매문의</li>
-                            <li>영업대표: 윤 대 섭 이사</li>
-                            <li>휴대폰: 010-6324-4761</li>
-                            <li>이메일: <a href="mailto:support@realgrid.com" class="text-muted">support@realgrid.com</a></li>
-                        </ul>
+                        • 4Core & 1Sub-Domain <br />
+                        • 라이선스 증서 및 제품 CD <br />
+                        • 무상 업그레이드 1년 <br />
+                        • 4시간 기본 교육 <br />
+                        • 온/오프라인 기술지원 1년 <br />
+                        • IE8 사용을 위한 Flash 버전 (RealGrid+) 무상 제공
                     </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Maintenance 1Year</td>
-                    <td>
-                        <ul>
-                            <li>1년간 업그레이드 및 기술지원</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>제품 구매 금액의 40%</li>
-                            <li>기간내 갱신 시 30% 할인</li>
-                        </ul>
+                    <td rowspan="5" class="vert-align">
+                        <h5>구 매 문 의</h5>
+                        영업대표: 윤 대 섭 이사 <br />
+                        휴대폰: 010-6324-4761 <br />
+                        이메일: <a href="mailto:dsyoon@realgrid.com" class="text-muted">dsyoon@realgrid.com</a>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td>Maintenance 2Year</td>
+                    <td class="vert-align">번 들</td>
                     <td>
-                        <ul>
-                            <li>2년간 업그레이드 및 기술지원</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>제품 구매 금액의 60%</li>
-                            <li>기간내 갱신 시 30% 할인</li>
-                        </ul>
+                        • 1Server & 1Sub-Domain <br />
+                        • 4Copy 이상 선 구매 조건
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>Premium Technical Support</td>
+                    <td class="vert-align">도 메 인</td>
                     <td>
-                        <ul>
-                            <li>도입초기, 개발자 투입시점에 방문 교육 및 질의응답 지원.</li>
-                            <li>40시간 기술지원 담당자 배정.</li>
-                            <li>5개 내외의 화면 템플릿 개발 지원.</li>
-                        </ul>
+                        • 1Server & 5Sub-Domain <br />
+                        • 단일 프로젝트 대상 총 32Core를 초과하지 않는 조건 <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vert-align">엔 터 프 라 이 즈</td>
+                    <td>
+                        • 1Server & 10Sub-Domain <br />
+                        • 단일 프로젝트 대상 총 64Core를 초과하지 않는 조건
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vert-align">컴 퍼 니</td>
+                    <td>
+                        • 회사 모든 업무에 서버 및 도메인 제한 없이 사용가능
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vert-align">유 지 보 수</td>
+                    <td>
+                        • 1년간 업그레이드 및 기술지원 <br />
+                        • 개발 라이선스 제공
+                    </td>
+                    <td class="vert-align">
+                        • 제품 구매 금액의 20% / 연간 <br />
+                        • 기간내 갱신 시 할인 적용
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="vert-align">
+                        <h4>Premium Technical Support</h4>
                     </td>
                     <td>
-                        <ul>
-                            <li>250만원 (VAT별도)</li>
-                        </ul>
+                        • 도입초기, 개발자 투입시점에 방문 교육 및 질의응답 지원 <br />
+                        • 40시간 기술지원 담당자 배정 <br />
+                        • 5개 내외의 화면 템플릿 개발 지원
+                    </td>
+                    <td class="vert-align">
+                        • 250만원 (VAT별도)
                     </td>
                 </tr>
             </tbody>
@@ -2644,7 +2707,7 @@
       <div class="col-sm-4">
         <div class="contact-detail-box">
           <i class="zmdi zmdi-layers zmdi-hc-3x text-colored"></i>
-          <h4>영 업 문 의</h4>
+          <h4>구 입 문 의</h4>
 
           <h4 class="text-muted"><abbr title="Phone">P:</abbr> 010-6324-4761<br></h4>
           E: <a href="mailto:dsyoon@realgrid.com" class="text-muted">dsyoon@realgrid.com</a>
@@ -2943,6 +3006,9 @@
 
   <!--sticky header-->
   <script type="text/javascript" src="scripts/jquery.sticky.js"></script>
+
+  <!-- javascript plugins -->
+  <script type="text/javascript" src="scripts/plugins/jquery.validate.min.js"></script>
 
   <!--common script for all pages-->
   <script src="scripts/jquery.app.js"></script>
