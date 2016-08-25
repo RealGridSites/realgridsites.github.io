@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    var basecampUrl = "https://basecamp.wrw.kr";
+    //ie에서 교육신청 오류 해결
+    if (!window.console) console = { log: function () { } };
+
+    var basecampUrl = "http://basecamp.wrw.kr";
     var wapiUrl = basecampUrl + "/api";
 
     $.support.cors = true; //ajax - cross domain support
