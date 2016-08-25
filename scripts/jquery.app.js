@@ -48,9 +48,9 @@ jQuery(document).ready(function () {
 
 
 //sticky header on scroll
-$(window).load(function() {
-    $(".sticky").sticky({topSpacing: 0});
-});
+// $(window).load(function() {
+//     $(".sticky").sticky({topSpacing: 0});
+// });
 
 
 $(window).scroll(function(){

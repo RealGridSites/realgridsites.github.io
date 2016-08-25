@@ -1,9 +1,25 @@
-$(document).ready(function () {
-    //ie에서 교육신청 오류 해결
-    if (!window.console) console = { log: function () { } };
+function stickyNavBar() {
+    var scrollh = $(this).scrollTop();
+    if (scrollh == 0) {
+        $(".navbar").removeClass("navbar-sticky");
+    } else {
+        $(".navbar").addClass("navbar-sticky");
+    }
+}
 
+$(window).scroll(function () {
+    stickyNavBar();
+});
+
+$(document).ready(function () {
     var basecampUrl = "http://basecamp.wrw.kr";
     var wapiUrl = basecampUrl + "/api";
+
+    //ie에서 교육신청 오류 해결
+    if (!window.console) console = { log: function () { } };
+    stickyNavBar();
+    getActiveCourses();
+
 
     $.support.cors = true; //ajax - cross domain support
     $("#enrollmentForm").validate({
@@ -65,8 +81,6 @@ $(document).ready(function () {
             errorElement: "div"
         });
 
-    getActiveCourses();
-
     // 교육과정 가져오기
     function getActiveCourses() {
         $.ajax({
@@ -89,6 +103,15 @@ $(document).ready(function () {
         }).fail(function(err) {
             console.log(err);
         });
+    }
+
+    function clearForm(form) {
+        var formName = "#" + form;
+
+        $(':input',formName)
+          .not(':button, :submit, :reset, :hidden, #courseList')
+          .not(':input[readonly]')
+          .val('');
     }
 
     // 수강신청 등록하기
@@ -114,8 +137,12 @@ $(document).ready(function () {
             },
             url: wapiUrl + "/Enrollments",
         }).done(function(data) {
-            console.log(data);
+            $("#enrollmentMessage").html("교육신청이 완료되었습니다.<br/> 교육진행 일주일전 안내 메일이 발송됩니다.");
+            $("#enrollmentModal").modal();
+            clearForm("enrollmentForm");
         }).fail(function(err) {
+            $("#enrollmentMessage").html("교육신청중 오류가 발생했습니다.:<br/>"+err.statusText);
+            $("#enrollmentModal").modal();
             console.log(err);
         });
     }

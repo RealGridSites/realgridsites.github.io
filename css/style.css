@@ -439,6 +439,10 @@ iframe {
 
 /*===== Navbar Custom ======*/
 
+.navbar-sticky {
+  padding: 10px 0px !important;
+}
+
 .navbar-custom {
   background-color: #2f3e47;
   width: 100%;

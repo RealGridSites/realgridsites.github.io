@@ -56,7 +56,7 @@
 
   <body data-spy="scroll" data-target="#navbar-menu">
 
-    <div class="navbar navbar-custom sticky" role="navigation">
+    <div class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
 
       <!-- Navbar-header -->
@@ -1078,6 +1078,23 @@
 
     </div>
     <!-- end Container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="enrollmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">교 육 신 청 결 과</h4>
+          </div>
+          <div class="modal-body" id="enrollmentMessage"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">닫 기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </section>
 
 
@@ -2621,10 +2638,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="6" class="vert-align">
+                    <td rowspan="6" class="vert-align text-center">
                         <h4>RealGridJs</h4>
                     </td>
-                    <td class="vert-align">기 본</td>
+                    <td class="vert-align"><h4>기 본</h4></td>
                     <td>
                         • 4Core & 1Sub-Domain <br />
                         • 라이선스 증서 및 제품 CD <br />
@@ -2633,7 +2650,7 @@
                         • 온/오프라인 기술지원 1년 <br />
                         • IE8 사용을 위한 Flash 버전 (RealGrid+) 무상 제공
                     </td>
-                    <td rowspan="5" class="vert-align">
+                    <td rowspan="5" class="vert-align text-center">
                         <h4>구 입 문 의</h4>
                         영업대표: 윤 대 섭 이사 <br />
                         휴대폰: 010-6324-4761 <br />
@@ -2641,21 +2658,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="vert-align">번 들</td>
+                    <td class="vert-align"><h4>번 들</h4></td>
                     <td>
                         • 1Server & 1Sub-Domain <br />
                         • 4Copy 이상 선 구매 조건
                     </td>
                 </tr>
                 <tr>
-                    <td class="vert-align">도 메 인</td>
+                    <td class="vert-align"><h4>도 메 인</h4></td>
                     <td>
                         • 1Server & 5Sub-Domain <br />
                         • 단일 프로젝트 대상 총 32Core를 초과하지 않는 조건 <br />
                     </td>
                 </tr>
                 <tr>
-                    <td class="vert-align">엔 터 프 라 이 즈</td>
+                    <td class="vert-align"><h4>엔 터 프 라 이 즈</h4></td>
                     <td>
                         • 1Server & 10Sub-Domain <br />
                         • 단일 프로젝트 대상 총 64Core를 초과하지 않는 조건
@@ -2663,13 +2680,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="vert-align">컴 퍼 니</td>
+                    <td class="vert-align"><h4>컴 퍼 니</h4></td>
                     <td>
                         • 회사 모든 업무에 서버 및 도메인 제한 없이 사용가능
                     </td>
                 </tr>
                 <tr>
-                    <td class="vert-align">유 지 보 수</td>
+                    <td class="vert-align"><h4>유 지 보 수</h4></td>
                     <td>
                         • 1년간 업그레이드 및 기술지원 <br />
                         • 개발 라이선스 제공
@@ -2680,7 +2697,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="vert-align">
+                    <td colspan="2" class="vert-align text-center">
                         <h4>Premium Technical Support</h4>
                     </td>
                     <td>
@@ -3017,9 +3034,6 @@
   <!-- Jquery easing -->
   <script type="text/javascript" src="scripts/jquery.easing.1.3.min.js"></script>
   <script src="scripts/wow.min.js"></script>
-
-  <!--sticky header-->
-  <script type="text/javascript" src="scripts/jquery.sticky.js"></script>
 
   <!-- javascript plugins -->
   <script type="text/javascript" src="scripts/plugins/jquery.validate.min.js"></script>
