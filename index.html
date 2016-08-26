@@ -114,8 +114,10 @@
             <a href="http://demo.realgrid.com/Manager/Questions" target="_blank">질문답변</a>
           </li>
           <li>
-            <a href="" target="_blank"
-                class="btn btn-inverse btn-bordered navbar-btn">평가판</a>
+              <button type="button" id="reqLicense" style="color: #fff !important;"
+                class="btn navbar-btn btn-primary">평가판</button>
+            <!-- <a href="#"
+                class="btn btn-inverse btn-bordered navbar-btn">평가판</a> -->
           </li>
         </ul>
 
@@ -127,9 +129,7 @@
 <!-- End navbar-custom -->
 
 
-    <!-- <div class="page-content">
-      <div class="wrapper"> -->
-        <!-- HOME -->
+    <!-- HOME -->
 <section class="home home-form-left" id="home">
   <!-- <div class="bg-overlay"></div> -->
   <div class="container">
@@ -2511,6 +2511,95 @@
 
 <!-- END CLIENTS -->
 
+<!--download-->
+<!-- Modal -->
+<div class="modal fade download_modal" id="licenseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 id="myModalLabel">
+                    RealGrid 평가판 라이선스 요청서
+                </h4>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>[평가판 라이선스]는 발급일로부터 30일간 사용할 수 있습니다.</li>
+                    <li>아래 내용을 모두 입력한 다음 “요청하기”를 눌러주세요.</li>
+                    <li><span class="em1">담당자가 확인 후</span> 최신버전의 RealGrid 제품과 평가판 라이선스를 이메일로 보내드립니다.</li>
+                    <!-- <li><span class="em1">*</span>는 필수 항목 입니다.</li> -->
+                </ul>
+                <hr />
+                <div class="hidden">
+                    <img src="images/ico_html5_ver.gif" alt="html5 logo icon" class="pd_html5" />
+                </div>
+
+                <form role="form" id="product_form" method="post">
+                    <div class="form-group">
+                        <div class="text-center">
+                            <div class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-default text-muted active">
+                                  <img src="images/ico_html5_ver.png" alt="html5 logo icon" class="pd_html5" height="25px" />
+                                <input type="radio" name="options" id="selectJs" autocomplete="off" checked> RealGrid Js
+                              </label>
+                              <label class="btn btn-default text-muted">
+                                  <img src="images/ico_flash_ver.png" alt="html5 logo icon" class="pd_html5" height="25px" />
+                                <input type="radio" name="options" id="selectPlus" autocomplete="off"> RealGrid Flash
+                              </label>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control tr_input hidden" id="lic_req_product" name="lic_req_product" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_username">이름 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_username" name="lic_req_username" placeholder="홍길동">
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_companyname">회사명(단체명) <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_companyname" name="lic_req_companyname" placeholder="(주)우리테크">
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_companyname">프로젝트명(사업명) <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_project" name="lic_req_companyname" placeholder="내부ERP시스템">
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_phonenumber">연락처 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_phonenumber" name="lic_req_phonenumber" placeholder="010-1234-5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_email">이메일 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_email" name="lic_req_email" placeholder="your-id@your-domain.com">
+                    </div>
+                    <div class="form-group hidden">
+                        <label for="lic_req_vender">판매처 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_vender" name="lic_req_vender" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="lic_req_server">도메인 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_server" name="lic_req_server" placeholder="localhost,127.0.0.1">
+                        <div class="em1">※ 여러개 도메인인 경우 공백업이 컴마(,)로 구분하여 입력하세요.</div>
+                        <div class="em1">※ 입력한 도메인에서만 사용하실 수 있습니다.</div>
+                    </div>
+                    <div class="form-group hidden">
+                        <label for="lic_req_licensetype">라이선스 <span class="em1">*</span></label>
+                        <input type="text" class="form-control tr_input" id="lic_req_licensetype" name="lic_req_licensetype" disabled>
+                    </div>
+                    <div class="hidden">
+                        <div class="pd_html5_sm">요청하신 버전은 <img src="images/ico_html5.png" alt="html5 icon" /> HTML5 버전 입니다.</div>
+                        <div class="pd_flash_sm">요청하신 버전은 <img src="images/ico_flash.png" alt="flash icon" /> Flash 버전 입니다.</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="lic_close">닫기</button>
+                <button type="button" class="btn btn-primary" id="btnRequestLicense"><i class="fa fa-check"></i> 요청하기</button>
+                <button type="button" class="btn btn-primary hidden" id="req_ing"><i class="fa fa-spinner fa-spin"></i> 전송중</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- PROJECTS -->
 <section class="section bg-gray" id="projects">
@@ -2960,8 +3049,6 @@
 
 <!-- END FAQ -->
 
-      <!-- </div>
-    </div> -->
 
     <!-- FOOTER -->
 <footer class="section bg-gray footer">
@@ -3040,9 +3127,7 @@
 
   <!--common script for all pages-->
   <script src="scripts/jquery.app.js"></script>
-
-  <!-- basecamp api -->
-  <script src="scripts/basecamp.js"></script>
+  <script src="scripts/app.js"></script>
 
   <!--google analytics-->
   <script>

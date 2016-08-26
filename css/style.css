@@ -30,7 +30,7 @@ a:hover,a:focus,.a:active {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
 }
 
 address {
@@ -199,14 +199,15 @@ iframe {
 }
 
 .btn-default:active {
-  background-color: #dae6ec;
+  background-color: #93d1f0;
   border-color: #C2CED4;
 }
 
 .btn-default.active,
 .btn-default:active,
 .open > .dropdown-toggle.btn-default {
-  background-color: #dae6ec;
+  /*background-color: #dae6ec;*/
+  background-color: #93d1f0;
   border-color: #C2CED4;
 }
 
@@ -440,7 +441,7 @@ iframe {
 /*===== Navbar Custom ======*/
 
 .navbar-sticky {
-  padding: 10px 0px !important;
+  padding: 5px 0px !important;
 }
 
 .navbar-custom {
@@ -480,11 +481,11 @@ iframe {
 
 .logo {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 26px;
   color: #374760 !important;
   letter-spacing: 1px;
-  padding-top: 12px;
-  font-family: 'Montserrat', sans-serif;
+  padding-top: 8px;
+  font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
 }
 
 .logo i{
@@ -1140,6 +1141,15 @@ iframe {
   margin-bottom: 0;
 }
 
+/* www.realgrid.com 추가 */
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+
+.em1 {
+    color: #ff2400;
+}
+
 /*======= Responsive ======*/
 @media (min-width: 768px) {
 	.nav-custom-left {
@@ -1197,8 +1207,4 @@ iframe {
   .intro-form,.video-bar {
     margin-top: 50px;
   }
-}
-
-.table tbody>tr>td.vert-align{
-    vertical-align: middle;
 }
