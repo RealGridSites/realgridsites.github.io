@@ -192,6 +192,12 @@ function setFormValidations() {
             lic_req_username: {
                 required: true
             },
+            lic_req_companyname: {
+                required: true
+            },
+            lic_req_project: {
+                required: true
+            },
             lic_req_phonenumber: {
                 required: true
             },
@@ -209,6 +215,12 @@ function setFormValidations() {
                     alert("이름은 필수 입력 사항 입니다.");
                 }*/
                 required: "이름은 반드시 입력해야 합니다."
+            },
+            lic_req_companyname: {
+                required: "회사명은 반드시 입력해야 합니다."
+            },
+            lic_req_project: {
+                required: "원활한 기술지원을 위해 사업명이 필요합니다. 단순 테스트인 경우 '내부테스트용'과 같이 입력해 주세요."
             },
             lic_req_phonenumber: {
                 required: "연락처는 반드시 입력해야 합니다."
