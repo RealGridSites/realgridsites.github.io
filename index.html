@@ -2580,6 +2580,23 @@
                         <div class="em1">※ 도메인이 여러개인 경우 공백없이 컴마(,)로 구분하여 입력하세요.</div>
                         <div class="em1">※ 입력한 도메인에서만 사용하실 수 있습니다.</div>
                     </div>
+                    <div class="form-group">
+                      <label for="lic_req_memo">메모 </label>
+                      <input type="text" class="form-control tr_input" id="lic_req_memo" name="lic_req_memo"
+                        placeholder="라이선스 발급 담당자에게 전달할 간단한 메시지...">
+                    </div> <!-- /col -->
+                    <div class="form-group">
+                        <label>라이선스 유형 <span class="em1">*</span></label><br />
+                        <label class="radio-inline">
+                          <input type="radio" name="lic_req_type" id="lic_req_type1" checked value="Evaluation"> 평가(Evaluation)
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="lic_req_type" id="lic_req_type2" value="Developer"> 개발(Developer)
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="lic_req_type" id="lic_req_type3" value="Enterprise"> 운영(Enterprise)
+                        </label>
+                    </div>
                     <div class="form-group hidden">
                         <label for="lic_req_licensetype">라이선스 <span class="em1">*</span></label>
                         <input type="text" class="form-control tr_input" id="lic_req_licensetype" name="lic_req_licensetype" disabled>

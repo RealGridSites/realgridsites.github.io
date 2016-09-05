@@ -257,6 +257,8 @@ function requestLicense() {
     var lic_product = $("input#lic_req_product");
     var lic_server = $("input#lic_req_server");
     var lic_project = $("input#lic_req_project");
+    var lic_memo = $("input#lic_req_memo");
+    var lic_type = $("input[name=lic_req_type]:checked");
 
     if (!$("#product_form").valid()) return;
 
@@ -279,7 +281,9 @@ function requestLicense() {
         //이름(필수)
         "UserName": $(lic_name).val(),
         //회사(선택)
-        "CompanyName": $(lic_company).val() + " / " + $(lic_project).val(),
+        "CompanyName": $(lic_company).val() +
+            " / " + $(lic_project).val() +
+            " / " + $(lic_memo).val(),
         //전화(필수)
         "PhoneNumber": $(lic_phone).val(),
         //이메일(필수)
@@ -291,9 +295,13 @@ function requestLicense() {
         //도메인(필수)
         "Server": $(lic_server).val(),
         //라이선스: Evaluation 으로 고정
-        "LicenseType": "Evaluation",
+        "LicenseType": $(lic_type).val(),
         "SendMail": true
     };
+
+    // // DEBUG
+    // console.log(data);
+    // return;
 
     $.ajax({
         type: "POST",
