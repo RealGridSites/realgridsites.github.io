@@ -47,6 +47,7 @@ function clearForm(form) {
     $(':input',formName)
       .not(':button, :submit, :reset, :hidden, #courseList')
       .not(':input[readonly]')
+      .not('input[name=lic_req_type]:checked')
       .val('');
 }
 
@@ -299,7 +300,7 @@ function requestLicense() {
         "SendMail": true
     };
 
-    // // DEBUG
+    // DEBUG
     // console.log(data);
     // return;
 
