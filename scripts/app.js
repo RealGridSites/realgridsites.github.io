@@ -62,6 +62,12 @@ function getActiveCourses() {
     }).done(function(data) {
         $("#courseList").find("option").remove().end();
         $.each(data, function (index, course) {
+            if (course && course.Status === "접수중") {
+                var st = new Date(course.StartDate);
+                var month = st.getUTCMonth() + 1;
+                var day = st.getUTCDate();
+                $("#eduPlan").text(" ("+month+"월 "+day+"일 무상교육 개설)");
+            }
             $("#courseList")
                 .append($("<option></option>")
                     .attr("value", course.Id)
