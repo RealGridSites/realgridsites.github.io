@@ -62,6 +62,7 @@ function getActiveCourses() {
     }).done(function(data) {
         $("#courseList").find("option").remove().end();
         $.each(data, function (index, course) {
+            // 접수중이 여러개인 경우 마지막 접수로 표시
             if (course && course.Status === "접수중") {
                 var st = new Date(course.StartDate);
                 var month = st.getUTCMonth() + 1;
