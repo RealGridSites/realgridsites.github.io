@@ -33,6 +33,10 @@ $(document).ready(function () {
         requestLicense();
     });
 
+    if (showLicense) {
+        showModalReqLicense();
+    }
+    
 });
 
 
