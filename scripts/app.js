@@ -19,7 +19,7 @@ $(document).ready(function () {
     $.support.cors = true;
 
     getActiveCourses();
-    setFormValidations();
+    // setFormValidations();
 
     $("#send").click(function(e) {
         createEnrollment();
@@ -36,7 +36,7 @@ $(document).ready(function () {
     if (showLicense) {
         showModalReqLicense();
     }
-    
+
 });
 
 
@@ -59,33 +59,36 @@ function clearForm(form) {
   교육과정 가져오기
 ---------------------------------------*/
 function getActiveCourses() {
-    $.ajax({
-        type: "get",
-        crossDomain: true,
-        url: wapiUrl + "/ActiveCourses",
-    }).done(function(data) {
-        $("#courseList").find("option").remove().end();
-        $.each(data, function (index, course) {
-            // 접수중이 여러개인 경우 마지막 접수로 표시
-            if (course && course.Status === "접수중") {
-                var st = new Date(course.StartDate);
-                var month = st.getUTCMonth() + 1;
-                var day = st.getUTCDate();
-                $("#eduPlan").text(" ("+month+"월 "+day+"일 무상교육 개설)");
-            }
-            $("#courseList")
-                .append($("<option></option>")
-                    .attr("value", course.Id)
-                    .attr("disabled", function () {
-                        if (course.Status != "접수중")
-                            return "disabled";
-                    })
-                    .text(course.Title + "(" + course.Status + ")")
-                    );
-        })
-    }).fail(function(err) {
-        console.log(err);
-    });
+    var st = new Date();
+    var month = st.getUTCMonth() + 1;
+    $("#eduPlan").text(" ("+month+"월 " + "무상교육 개설)");
+    // $.ajax({
+    //     type: "get",
+    //     crossDomain: true,
+    //     url: wapiUrl + "/ActiveCourses",
+    // }).done(function(data) {
+    //     $("#courseList").find("option").remove().end();
+    //     $.each(data, function (index, course) {
+    //         // 접수중이 여러개인 경우 마지막 접수로 표시
+    //         if (course && course.Status === "접수중") {
+    //             var st = new Date(course.StartDate);
+    //             var month = st.getUTCMonth() + 1;
+    //             var day = st.getUTCDate();
+    //             $("#eduPlan").text(" ("+month+"월 "+day+"일 무상교육 개설)");
+    //         }
+    //         $("#courseList")
+    //             .append($("<option></option>")
+    //                 .attr("value", course.Id)
+    //                 .attr("disabled", function () {
+    //                     if (course.Status != "접수중")
+    //                         return "disabled";
+    //                 })
+    //                 .text(course.Title + "(" + course.Status + ")")
+    //                 );
+    //     })
+    // }).fail(function(err) {
+    //     console.log(err);
+    // });
 }
 
 /*--------------------------------------
