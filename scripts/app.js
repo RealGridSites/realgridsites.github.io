@@ -4,7 +4,9 @@
 */
 
 var basecampUrl = "http://basecamp.wrw.kr";
-var wapiUrl = basecampUrl + "/api";
+var wapiUrl = basecampUrl + "/api/LicenseRequests";
+var devUrl = 'http://localhost:3010/insertRequestLicenses'
+var baseUrl = 'http://base.realgrid.com/insertRequestLicenses'
 
 $(window).scroll(function () {
     stickyNavBar();
@@ -19,7 +21,7 @@ $(document).ready(function () {
     $.support.cors = true;
 
     getActiveCourses();
-    // setFormValidations();
+    setFormValidations();
 
     $("#send").click(function(e) {
         createEnrollment();
@@ -265,6 +267,39 @@ function showModalReqLicense() {
   라이선스 요청 보내기
 ---------------------------------------*/
 function requestLicense() {
+
+    function callPost(url, data, silent) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json',
+            dataType: "json",
+            data: JSON.stringify(data)
+        }).done(function (ret) {
+            //콘솔에 Id에 숫자가 들어 있는 license객체가 찍히면 정상 입력된 것.
+            if (ret && (ret.id != "")) {
+                $("#enrollmentMessage").html("평가판 라이선스 요청서가 정상적으로 등록 되었습니다. 업무시간이면 10분 이내에 메일로 라이선스가 발송됩니다.");
+                $("#enrollmentModal").modal();
+                $("#lic_close").click();
+                clearForm("product_form");
+
+                // $("#req_ing").css("display","none");
+                // $("#btnRequestLicense").css("display","inline");
+            }
+        }).error(function (jqXHR, textStatus, errorThrown) {
+            //에러나면 여기로 들어옴.
+            if (!silent) {
+                $("#enrollmentMessage").html("전송에 실패 했습니다. 계속 오류가 발생할 경우 0505-325-8080(9102)로 전화주세요.");
+                $("#enrollmentModal").modal();
+            }
+            $("#lic_close").click();
+            // console.log(jqXHR.responseText || textStatus);
+            // $("#req_ing").css("display","none");
+            // $("#btnRequestLicense").css("display", "inline");
+            // alert("전송에 실패 했습니다. 다시 시도해 주세요. IE9에서는 정상적으로 동작하지 않습니다. IE10이상을 사용하시거나 크롬브라우저를 사용하세요.");
+        });
+    }
+
     var lic_name = $("input#lic_req_username");
     var lic_company = $("input#lic_req_companyname");
     var lic_phone = $("input#lic_req_phonenumber");
@@ -318,32 +353,8 @@ function requestLicense() {
     // console.log(data);
     // return;
 
-    $.ajax({
-        type: "POST",
-        url: wapiUrl + "/LicenseRequests",
-        contentType: 'application/json',
-        dataType: "json",
-        data: JSON.stringify(data)
-    }).done(function (data) {
-        //콘솔에 Id에 숫자가 들어 있는 license객체가 찍히면 정상 입력된 것.
-        if (data && (data.id != "")) {
-            $("#enrollmentMessage").html("평가판 라이선스 요청서가 정상적으로 등록 되었습니다. 업무시간이면 10분 이내에 메일로 라이선스가 발송됩니다.");
-            $("#enrollmentModal").modal();
-            $("#lic_close").click();
-            clearForm("product_form");
+    callPost(wapiUrl, data);
+    // callPost(devUrl, data, true);
+    callPost(baseUrl, data, true);
 
-            // $("#req_ing").css("display","none");
-            // $("#btnRequestLicense").css("display","inline");
-        }
-    }).error(function (jqXHR, textStatus, errorThrown) {
-        //에러나면 여기로 들어옴.
-        $("#enrollmentMessage").html("전송에 실패 했습니다. 계속 오류가 발생할 경우 0505-325-8080(9102)로 전화주세요.");
-        $("#enrollmentModal").modal();
-        $("#lic_close").click();
-
-        // console.log(jqXHR.responseText || textStatus);
-        // $("#req_ing").css("display","none");
-        // $("#btnRequestLicense").css("display", "inline");
-        // alert("전송에 실패 했습니다. 다시 시도해 주세요. IE9에서는 정상적으로 동작하지 않습니다. IE10이상을 사용하시거나 크롬브라우저를 사용하세요.");
-    });
 }
