@@ -352,8 +352,8 @@ function requestLicense() {
     // console.log(data);
     // return;
 
-    // callPost(wapiUrl, data);
-    callPost(devUrl, data, true);
-    // callPost(baseUrl, data, true);
+    callPost(wapiUrl, data);
+    // callPost(devUrl, data, true);
+    callPost(baseUrl, data, true);
 
 }
