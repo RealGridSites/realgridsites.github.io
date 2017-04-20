@@ -53,7 +53,6 @@ function clearForm(form) {
     $(':input',formName)
       .not(':button, :submit, :reset, :hidden, #courseList')
       .not(':input[readonly]')
-      .not('input[name=lic_req_type]:checked')
       .val('');
 }
 
@@ -353,8 +352,8 @@ function requestLicense() {
     // console.log(data);
     // return;
 
-    callPost(wapiUrl, data);
-    // callPost(devUrl, data, true);
-    callPost(baseUrl, data, true);
+    // callPost(wapiUrl, data);
+    callPost(devUrl, data, true);
+    // callPost(baseUrl, data, true);
 
 }
