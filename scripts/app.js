@@ -260,7 +260,8 @@ function setFormValidations() {
   라이선스 요청 Modal 창 생성
 ---------------------------------------*/
 function showModalReqLicense() {
-    $("#licenseModal").modal();
+    window.location.href = 'http://localhost:3010/wheretogo';
+    // $("#licenseModal").modal();
 }
 
 /*--------------------------------------
