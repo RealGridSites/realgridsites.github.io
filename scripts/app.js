@@ -260,7 +260,7 @@ function setFormValidations() {
   라이선스 요청 Modal 창 생성
 ---------------------------------------*/
 function showModalReqLicense() {
-    window.location.href = 'http://localhost:3010/wheretogo';
+    window.location.href = 'http://service.realgrid.com/wheretogo';
     // $("#licenseModal").modal();
 }
 
